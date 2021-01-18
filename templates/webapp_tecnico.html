@@ -1,0 +1,143 @@
+{% load static %}
+<head>
+<title>GreenLink - Login</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta charset="utf-8">
+
+<!--FlexSlider-->
+	<link rel="stylesheet" href={% static "css/flexslider.css" %} type="text/css" media="screen" />
+<!--//FlexSlider-->
+
+
+
+<link href="{% static "css/lsb.css"%}" rel="stylesheet" type="text/css"><!-- gallery -->
+ <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+<!-- custom css theme files -->
+	<link rel="stylesheet" href={% static "css/bootstrap.min.css" %} type="text/css" media="all">
+	<link rel="stylesheet" href={% static "css/font-awesome.min.css"  %}/>
+	<link rel="stylesheet" href={% static "css/style.css" %} type="text/css" media="all">
+<!-- //custom css theme files -->
+
+<!-- google fonts -->
+
+<!-- //google fonts -->
+
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+
+</head>
+<body>
+
+<div class="w3l-banner">
+<div class="wthree-dot">
+		<!-- nav -->
+		<div class="header w3layouts">
+				<div class="container-fluid">
+					<nav class="navbar navbar-default">
+						<div class="navbar-header navbar-left">
+							<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+								<span class="sr-only">Toggle navigation</span>
+								<span class="icon-bar"></span>
+								<span class="icon-bar"></span>
+								<span class="icon-bar"></span>
+							</button>
+							<h1><a class="navbar-brand" href="/"><span>Green</span> Link</a></h1>
+						</div>
+						<!-- Collect the nav links, forms, and other content for toggling -->
+						<div class="collapse navbar-collapse navbar-right" id="bs-example-navbar-collapse-1">
+							<nav>
+								<ul class="nav navbar-nav">
+                                    <li><a href="/form"> Aderir</a></li>
+                                    <li><a href="/login" class="scroll">Logout</a></li>
+									<li class="active"><a href="/">Home</a></li>
+									<li><a href="/" class="scroll">Acerca</a></li>
+									<li><a href="/" class="scroll">Serviços</a></li>
+									<li><a href="/" class="scroll">Equipa</a></li>
+
+								</ul>
+							</nav>
+						<ul class="top-links social">
+							<li><a href="#"><i class="fa fa-facebook"></i></a></li>
+							<li><a href="#"><i class="fa fa-twitter"></i></a></li>
+							<li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+							<li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+						</ul>
+						</div>
+					</nav>
+				</div>
+			</div>
+		<!-- //nav -->
+
+		<!-- //Header -->
+		<div class="container" style="height: 300px">
+			<div class="flexslider-info">
+				<section class="slider">
+					<div class="flexslider">
+						<ul class="slides">
+							<li>
+							<div class="w3l-info">
+								<h2>Bem Vindo à GreenLink</h2>
+								<p>Energia solar do Séc. XXI</p>
+
+							</div>
+							</li>
+						</ul>
+					</div>
+				</section>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+<h1 style="padding-top: 3%; padding-bottom: 1%; text-align: center"> Últimos Problemas</h1>
+
+<div class="gallery" id="gallery">
+	<div class="container">
+	</div>
+	<table class="table table-hover">
+		<thead>
+		  <tr>
+              <th> ID Cliente</th>
+			<th scope="col">Data e Hora</th>
+			<th scope="col">Tipo de Problema</th>
+			<th scope="col">Detalhes</th>
+			<th scope="col">Contacto</th>
+              <th scope="col">Estado</th>
+		  </tr>
+		</thead>
+		<tbody>
+		  <tr>
+          <th scope="row">1C5</th>
+			<th>22 Jan 2020 10:22</th>
+			<td>Problemas de Rendimento</td>
+			<td>Paínel de 200W apenas está a gerar 10% do normal</td>
+			<td>928376475</td>
+              <td> <select>
+            <option value="await">Aguarda Contacto</option>
+            <option value="contacted">Contactado</option>
+            <option value="dispatched">Em curso</option>
+            <option value="concluded">Concluído</option>
+       </select></td>
+		  </tr>
+		</tbody>
+	  </table>
+	</div>
+<!--//gallery-->
+
+<br>
+
+<h1 style="padding-top: 3%; padding-bottom: 1%; text-align: center">Calendário Geral </h1>
+<div align="center">
+    <iframe src="https://calendar.google.com/calendar/embed?height=600&amp;wkst=1&amp;bgcolor=%23ffffff&amp;ctz=Europe%2FLisbon&amp;src=dHNxY2ZpY2RqZXNhcm5yNG5qYW5pbmEwaWtAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ&amp;color=%23C0CA33" style="border:solid 1px #777" width="1200" height="800" frameborder="0" scrolling="no"></iframe>
+</div>
+<br>
+<br>
+
+<script src="https://canvasjs.com/assets/script/jquery-1.11.1.min.js"></script>
+<script src="https://canvasjs.com/assets/script/jquery.canvasjs.min.js"></script>
+
+</body>
+

@@ -1,0 +1,253 @@
+{% load static %}
+<title>GreenLink - Login</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta charset="utf-8">
+
+<!--FlexSlider-->
+	<link rel="stylesheet" href={% static "css/flexslider.css" %} type="text/css" media="screen" />
+<!--//FlexSlider-->
+
+
+
+<link href="{% static "css/lsb.css"%}" rel="stylesheet" type="text/css"><!-- gallery -->
+ <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+<!-- custom css theme files -->
+	<link rel="stylesheet" href={% static "css/bootstrap.min.css" %} type="text/css" media="all">
+	<link rel="stylesheet" href={% static "css/font-awesome.min.css"  %}/>
+	<link rel="stylesheet" href={% static "css/style.css" %} type="text/css" media="all">
+<!-- //custom css theme files -->
+
+<!-- google fonts -->
+
+<!-- //google fonts -->
+
+<script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+
+<script>
+    function measure() {
+
+var dataPoints1 = [];
+var dataPoints2 = [];
+var dataPoints3 = [];
+
+var options = {
+
+	axisX: {
+		title: "Energia Gerada"
+	},
+	axisY: {
+		suffix: "Wh"
+	},
+	toolTip: {
+		shared: true
+	},
+	legend: {
+		cursor: "pointer",
+		verticalAlign: "top",
+		fontSize: 22,
+		fontColor: "dimGrey",
+		itemclick: toggleDataSeries
+	},
+	data: [{
+		type: "line",
+		xValueType: "dateTime",
+		yValueFormatString: "###.00Wh",
+		xValueFormatString: "hh:mm:ss TT",
+		showInLegend: true,
+		name: "Painel 1",
+		dataPoints: dataPoints1
+	},
+	{
+		type: "line",
+		xValueType: "dateTime",
+		yValueFormatString: "###.00Wh",
+		showInLegend: true,
+		name: "Painel 2",
+		dataPoints: dataPoints2
+	}]
+};
+
+var chart_measure = $("#chartContainer_readings").CanvasJSChart(options);
+
+function toggleDataSeries(e) {
+	if (typeof (e.dataSeries.visible) === "undefined" || e.dataSeries.visible) {
+		e.dataSeries.visible = false;
+	}
+	else {
+		e.dataSeries.visible = true;
+	}
+	e.chart.render();
+}
+
+var updateInterval = 2000;
+// initial value
+var yValue1 = 170;
+var yValue2 = 20;
+var yValue3 = 780;
+
+var time = new Date;
+// starting at 10.00 am
+//time.setHours(10);
+//time.setMinutes(00);
+//time.setSeconds(00);
+//time.setMilliseconds(00);
+
+function updateChart(count) {
+	count = count || 1;
+	var deltaY1, deltaY2, deltaY3;
+	for (var i = 0; i < count; i++) {
+		time.setTime(time.getTime() + updateInterval);
+		deltaY1 = -1 + Math.random() * (1 + 1);
+		deltaY2 = -1 + Math.random() * (1 + 1);
+		deltaY3 = -1 + Math.random() * (1 + 1);
+
+		// adding random value and rounding it to two digits.
+		yValue1 = Math.round((yValue1 + deltaY1) * 100) / 100;
+		yValue2 = Math.round((yValue2 + deltaY2) * 100) / 100;
+		yValue3 = Math.round((yValue3 + deltaY3) * 100) / 100;
+
+		// pushing the new values
+		dataPoints1.push({
+			x: time.getTime(),
+			y: yValue1
+		});
+		dataPoints2.push({
+			x: time.getTime(),
+			y: yValue2
+		});
+	}
+
+	// updating legend text with  updated with y Value
+	options.data[0].legendText = "Painel 1 : " + yValue1 + "Wh";
+	options.data[1].legendText = "Painel 2 : " + yValue2 + "Wh";
+	$("#chartContainer_readings").CanvasJSChart().render();
+}
+// generates first set of dataPoints
+updateChart(100);
+setInterval(function () { updateChart() }, updateInterval);
+
+}
+</script>
+
+
+
+<script>
+window.onload = function () {
+
+//Better to construct options first and then pass it as a parameter
+var options_profit = {
+	title: {
+		text: "Poupança devido á geração de energia (€)"
+	},
+	data: [
+	{
+		// Change type to "doughnut", "line", "splineArea", etc.
+		type: "column",
+		dataPoints: [
+		    { label: "Setembro 2020",  y: 45  },
+			{ label: "Outubro 2020",  y: 30  },
+			{ label: "Novembro 2020", y: 20  },
+			{ label: "Dezembro 2020", y: 15  },
+			{ label: "Janeiro 2021",  y: 17  }
+		]
+	}
+	]
+};
+
+$("#chartContainer_profit").CanvasJSChart(options_profit);
+measure()
+}
+</script>
+
+</head>
+<body>
+
+<div class="w3l-banner">
+<div class="wthree-dot">
+		<!-- nav -->
+		<div class="header w3layouts">
+				<div class="container-fluid">
+					<nav class="navbar navbar-default">
+						<div class="navbar-header navbar-left">
+							<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+								<span class="sr-only">Toggle navigation</span>
+								<span class="icon-bar"></span>
+								<span class="icon-bar"></span>
+								<span class="icon-bar"></span>
+							</button>
+							<h1><a class="navbar-brand" href="/index.html"><span>Green</span> Link</a></h1>
+						</div>
+						<!-- Collect the nav links, forms, and other content for toggling -->
+						<div class="collapse navbar-collapse navbar-right" id="bs-example-navbar-collapse-1">
+							<nav>
+								<ul class="nav navbar-nav">
+                                    <li><a href="/form"> Aderir</a></li>
+                                    <li><a href="/" class="scroll">Logout</a></li>
+									<li class="active"><a href="/">Home</a></li>
+									<li><a href="/" class="scroll">Acerca</a></li>
+									<li><a href="/" class="scroll">Serviços</a></li>
+									<li><a href="/" class="scroll">Equipa</a></li>
+                                    <li><a href="/support" class="scroll">Apoio ao Cliente</a></li>
+
+
+
+
+								</ul>
+
+							</nav>
+						<ul class="top-links social">
+							<li><a href="#"><i class="fa fa-facebook"></i></a></li>
+							<li><a href="#"><i class="fa fa-twitter"></i></a></li>
+							<li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+							<li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+						</ul>
+						</div>
+					</nav>
+				</div>
+			</div>
+		<!-- //nav -->
+
+		<!-- //Header -->
+		<div class="container" style="height: 300px">
+			<div class="flexslider-info">
+				<section class="slider">
+					<div class="flexslider">
+						<ul class="slides">
+							<li>
+							<div class="w3l-info">
+								<h2>Bem Vindo à GreenLink</h2>
+								<p>Energia solar do Séc. XXI</p>
+
+							</div>
+							</li>
+						</ul>
+					</div>
+				</section>
+			</div>
+		</div>
+	</div>
+</div>
+
+<h1 style="padding-top: 2%; text-align: center; padding-bottom: 2%">Geração de Energia</h1>
+<div id="chartContainer_readings" style="height: 300px; width: 100%;"></div>
+<h2 style="text-align: center">Algum problema com as medições? <a onclick="alert_corporate()" href="#" class="btn btn-lg btn-danger">Reporte Aqui!</a></h2>
+<div id="chartContainer_profit"  style="height: 300px; width: 100%; padding-top: 2%"></div>
+
+
+<script src="https://canvasjs.com/assets/script/jquery-1.11.1.min.js"></script>
+<script src="https://canvasjs.com/assets/script/jquery.canvasjs.min.js"></script>
+
+
+
+
+<script>
+    function alert_corporate(){
+        alert("O problema foi reportado, será contactado assim que possível");
+    }
+</script>
+
+</body>
+

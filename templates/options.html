@@ -1,0 +1,152 @@
+{% load static %}
+<title>GreenLink - Home</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta charset="utf-8">
+
+<!--FlexSlider-->
+	<link rel="stylesheet" href={% static "css/flexslider.css" %} type="text/css" media="screen" />
+<!--//FlexSlider-->
+
+<link href="{% static "css/lsb.css"%}" rel="stylesheet" type="text/css"><!-- gallery -->
+
+<!-- custom css theme files -->
+	<link rel="stylesheet" href={% static "css/bootstrap.min.css" %} type="text/css" media="all">
+	<link rel="stylesheet" href={% static "css/font-awesome.min.css"  %}/>
+	<link rel="stylesheet" href={% static "css/style.css" %} type="text/css" media="all">
+<!-- //custom css theme files -->
+
+<!-- google fonts -->
+
+<!-- //google fonts -->
+
+<script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+</head>
+<body>
+
+<div class="w3l-banner">
+<div class="wthree-dot">
+		<!-- nav -->
+		<div class="header w3layouts">
+				<div class="container-fluid">
+					<nav class="navbar navbar-default">
+						<div class="navbar-header navbar-left">
+							<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+								<span class="sr-only">Toggle navigation</span>
+								<span class="icon-bar"></span>
+								<span class="icon-bar"></span>
+								<span class="icon-bar"></span>
+							</button>
+							<h1><a class="navbar-brand" href="/"><span>Green</span> Link</a></h1>
+						</div>
+						<!-- Collect the nav links, forms, and other content for toggling -->
+						<div class="collapse navbar-collapse navbar-right" id="bs-example-navbar-collapse-1">
+							<nav>
+								<ul class="nav navbar-nav">
+                                    <li><a href="/form"> Aderir</a></li>
+                                    <li><a href="/login" class="scroll">Login</a></li>
+									<li class="active"><a href="/">Home</a></li>
+									<li><a href="/" class="scroll">Acerca</a></li>
+									<li><a href="/" class="scroll">Serviços</a></li>
+									<li><a href="/" class="scroll">Equipa</a></li>
+
+
+
+								</ul>
+
+							</nav>
+						<ul class="top-links social">
+							<li><a href="#"><i class="fa fa-facebook"></i></a></li>
+							<li><a href="#"><i class="fa fa-twitter"></i></a></li>
+							<li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+							<li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+						</ul>
+						</div>
+					</nav>
+				</div>
+			</div>
+		<!-- //nav -->
+
+		<!-- //Header -->
+		<div class="container" style="height: 400px">
+			<div class="flexslider-info">
+				<section class="slider">
+					<div class="flexslider">
+						<ul class="slides">
+							<li>
+							<div class="w3l-info">
+								<h2>Bem Vindo à GreenLink</h2>
+								<p>Energia solar do Séc. XXI</p>
+								<ul>
+									<li><a href="#contact" class="scroll w3l_contact">Contato</a></li>
+								</ul>
+							</div>
+							</li>
+						</ul>
+					</div>
+				</section>
+			</div>
+		</div>
+	</div>
+</div>
+
+<h3 style="padding-top: 5%; text-align: center">As suas opções</h3>
+
+<div class="container" style="padding-top: 5%">
+    <div class="row">
+    <div class="col-lg-4 col-lg-offset-1">
+         <div class="card">
+          <img src={% static "images/img_avatar.png" %} alt="Avatar" style="width=100%">
+          <div class="container" style="padding-top: 5%">
+            <h4><b>Empresa Z</b></h4>
+            <p style="padding-top: 2%">Solução: 1 Painél 200 Watts + 1 Painél 100 Watts + Inversor 3.5kWatts</p>
+            <p style="padding-top: 2%">Disponibilidade: Fevereiro 2021</p>
+            <p style="padding-top: 2%">Orçamento: 1500€ - 1750€</p>
+            <p style="padding-top: 2%;padding-bottom: 2%">Contacto: geral@empresaz.pt</p>
+
+               <label for="date">Escolha uma data:</label>
+            <select id="date" name="dates">
+              <option value="01022020">Segunda, 1 Fevereiro 2020</option>
+              <option value="08022020">Segunda, 8 Fevereiro 2020</option>
+              <option value="15022020">Segunda, 15 Fevereiro 2020</option>
+              <option value="22022020">Segunda, 22 Fevereiro 2020</option>
+
+            </select>
+
+            <div style="padding-bottom: 2%; padding-top: 2%"> <button onclick="alertsuccess()">Escolher</button></div>
+
+
+          </div>
+        </div>
+    </div>
+     <div class="col-lg-4 col-lg-offset-2">
+         <div class="card">
+          <img src={% static "images/img_avatar.png" %} alt="Avatar">
+          <div class="container" style="padding-top: 5%">
+            <h4><b>Empresa X</b></h4>
+            <p style="padding-top: 2%">Solução: 2 Painéis 200 Watts + Inversor 4kWatts</p>
+            <p style="padding-top: 2%">Disponibilidade: Março 2021</p>
+            <p style="padding-top: 2%">Orçamento: 2000€ - 2500€</p>
+            <p style="padding-top: 2%;padding-bottom: 2%">Contacto: vendas@empresax.pt</p>
+             <label for="date">Escolha uma data:</label>
+            <select id="date" name="dates">
+              <option value="11032020">Quinta, 11 Março 2020</option>
+              <option value="18032020">Quinta, 18 Março 2020</option>
+              <option value="25032020">Quinta, 25 Março 2020</option>
+            </select>
+
+
+            <div style="padding-bottom: 2%; padding-top: 2%"> <button onclick="alertsuccess()">Escolher</button></div>
+
+          </div>
+        </div>
+    </div>
+    </div>
+</div>
+<div class="container" style="padding-top: 10%"></div>
+
+</body>
+<script>function alertsuccess(){
+    alert("Obrigado pela sua preferência na GreenLink. Um representante da empresa escolhida vai entrar em contacto consigo.");
+    window.location = "/";
+}</script>

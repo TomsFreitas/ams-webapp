@@ -1,0 +1,196 @@
+{% load static %}
+<title>GreenLink - Login</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta charset="utf-8">
+
+<!--FlexSlider-->
+	<link rel="stylesheet" href={% static "css/flexslider.css" %} type="text/css" media="screen" />
+<!--//FlexSlider-->
+
+<link href="{% static "css/lsb.css"%}" rel="stylesheet" type="text/css"><!-- gallery -->
+ <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+<!-- custom css theme files -->
+	<link rel="stylesheet" href={% static "css/bootstrap.min.css" %} type="text/css" media="all">
+	<link rel="stylesheet" href={% static "css/font-awesome.min.css"  %}/>
+	<link rel="stylesheet" href={% static "css/style.css" %} type="text/css" media="all">
+    <link rel="stylesheet" href={% static "css/login.css" %} type="text/css" media="all">
+<!-- //custom css theme files -->
+
+<!-- google fonts -->
+
+<!-- //google fonts -->
+
+<script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+</head>
+<body>
+
+<div class="w3l-banner">
+<div class="wthree-dot">
+		<!-- nav -->
+		<div class="header w3layouts">
+				<div class="container-fluid">
+					<nav class="navbar navbar-default">
+						<div class="navbar-header navbar-left">
+							<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+								<span class="sr-only">Toggle navigation</span>
+								<span class="icon-bar"></span>
+								<span class="icon-bar"></span>
+								<span class="icon-bar"></span>
+							</button>
+							<h1><a class="navbar-brand" href="/"><span>Green</span> Link</a></h1>
+						</div>
+						<!-- Collect the nav links, forms, and other content for toggling -->
+						<div class="collapse navbar-collapse navbar-right" id="bs-example-navbar-collapse-1">
+							<nav>
+								<ul class="nav navbar-nav">
+                                    <li><a href="/form"> Aderir</a></li>
+                                    <li><a href="/login" class="scroll">Login</a></li>
+									<li class="active"><a href="/">Home</a></li>
+									<li><a href="/" class="scroll">Acerca</a></li>
+									<li><a href="/" class="scroll">Serviços</a></li>
+									<li><a href="/" class="scroll">Equipa</a></li>
+
+
+
+								</ul>
+
+							</nav>
+						<ul class="top-links social">
+							<li><a href="#"><i class="fa fa-facebook"></i></a></li>
+							<li><a href="#"><i class="fa fa-twitter"></i></a></li>
+							<li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+							<li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+						</ul>
+						</div>
+					</nav>
+				</div>
+			</div>
+		<!-- //nav -->
+
+		<!-- //Header -->
+		<div class="container" style="height: 400px">
+			<div class="flexslider-info">
+				<section class="slider">
+					<div class="flexslider">
+						<ul class="slides">
+							<li>
+							<div class="w3l-info">
+								<h2>Bem Vindo à GreenLink</h2>
+								<p>Energia solar do Séc. XXI</p>
+								<ul>
+									<li><a href="#contact" class="scroll w3l_contact">Contato</a></li>
+								</ul>
+							</div>
+							</li>
+						</ul>
+					</div>
+				</section>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="flex-container" style="text-align: center; padding-block: 1%">
+<form action="/postform/"
+      target="_self"
+      id="bootstrapForm"
+      method="POST">
+    {% csrf_token %}
+    <fieldset style="padding-bottom: 2%">
+        <h2>Greenlink<br><small>Formulário de Requisição de Orçamento</small></h2>
+    </fieldset>
+
+
+    <!-- Field type: "short" id: "2030642972" -->
+    <fieldset>
+        <legend for="2030642972">Nome</legend>
+        <div class="form-group">
+            <input size="50" id="1277727606" type="text" name="entry.1277727606" class="form-control-change" >
+        </div>
+    </fieldset>
+
+
+    <!-- Field type: "paragraph" id: "836499360" -->
+    <fieldset>
+        <legend for="836499360">Morada</legend>
+        <div class="form-group">
+            <input size="50" id="1277727606" type="text" name="entry.1277727606" class="form-control-change" >
+        </div>
+    </fieldset>
+
+
+    <!-- Field type: "short" id: "891084065" -->
+    <fieldset>
+        <legend for="891084065">Telemóvel</legend>
+        <div class="form-group">
+            <input size="50" id="1289323767" type="text" name="entry.1289323767" class="form-control-change" >
+        </div>
+    </fieldset>
+
+
+    <!-- Field type: "short" id: "1826306075" -->
+    <fieldset>
+        <legend for="1826306075">Email</legend>
+        <div class="form-group">
+            <input size="50" id="1054522345" type="text" name="entry.1054522345" class="form-control-change" >
+        </div>
+    </fieldset>
+
+
+    <!-- Field type: "choices" id: "697775905" -->
+    <fieldset>
+        <legend for="697775905">Tipo de superficie</legend>
+        <div class="form-group">
+            <div class="radio">
+                <label>
+                    <input type="radio" name="entry.110938756" value="Prédio" >
+                    Prédio
+                </label>
+            </div>
+            <div class="radio">
+                <label>
+                    <input type="radio" name="entry.110938756" value="Vivenda" >
+                    Vivenda
+                </label>
+            </div>
+            <div class="radio">
+                <label>
+                    <input type="radio" name="entry.110938756" value="Terreno" >
+                    Terreno
+                </label>
+            </div>
+            <div class="radio">
+                <label>
+                    <input type="radio" name="entry.110938756" value="Empresa" >
+                    Empresa
+                </label>
+            </div>
+        </div>
+    </fieldset>
+
+
+    <!-- Field type: "short" id: "309612789" -->
+    <fieldset>
+        <legend for="309612789">Área de instalação</legend>
+        <div class="form-group">
+            <input size="50" id="119267795" type="text" name="entry.119267795" class="form-control-change" >
+        </div>
+    </fieldset>
+
+    <input type="hidden" name="fvv" value="1">
+    <input type="hidden" name="fbzx" value="-6837532207165411984">
+    <!--
+        CAVEAT: In multipages (multisection) forms, *pageHistory* field tells to google what sections we've currently completed.
+        This usually starts as "0" for the first page, then "0,1" in the second page... up to "0,1,2..N" in n-th page.
+        Keep this in mind if you plan to change this code to recreate any sort of multipage-feature in your exported form.
+        We're setting this to the total number of pages in this form because we're sending all fields from all the section together.
+    -->
+    <input type="hidden" name="pageHistory" value="0">
+
+    <input class="btn btn-primary" type="submit" value="Submeter">
+</form>
+</div>
+
+</body>
